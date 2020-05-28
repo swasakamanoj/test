@@ -32,6 +32,509 @@
             <version>${camel.version}</version>
         </dependency>
 
+1. Create Candidate:
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "#http://schemas.xmlsoap.org/soap/envelope/": "SOAP-ENV:Envelope.-xmlns:SOAP-ENV",
+      "#http://www.taleo.com/ws/tee800/2009/01/candidate": "SOAP-ENV:Envelope.-xmlns:ns1",
+      "username": [
+        "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:EmailAddress",
+        "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Credentials.ns1:Credentials.ns1:Username.-searchValue",
+        "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Credentials.ns1:Credentials.ns1:Username.%text%"
+      ],
+      "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Credentials.ns1:Credentials.ns1:Username.-searchTarget",
+      "#searchAndValue": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Credentials.ns1:Credentials.ns1:Username.-searchType",
+      "firstName": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:FirstName",
+      "locale": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:TalentUser.ns1:TalentUser.ns1:Profile.ns1:ProfileInformation.ns1:Locale",
+      "middleName": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:MiddleInitial",
+      "lastName": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:LastName",
+      "phoneNumber": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:HomePhone",
+      "city": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:City",
+      "state": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Statev1",
+      "jobId": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:Requisition.ns1:Requisition.ns1:ContestNumber.-searchValue",
+        "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:Requisition.ns1:Requisition.ns1:ContestNumber.-self-closing",
+        "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:Requisition.ns1:Requisition.ns1:ContestNumber.-searchType",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:Requisition.ns1:Requisition.ns1:ContestNumber.-searchTarget"
+      },
+      "ethnicity": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EEO2bv2_Ethnicity": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "race": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#EEO2bv2_Race": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType"
+        ],
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "gender": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EEO2bv2_Gender": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "veteran": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EEO2bv2_Veteran": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "disability": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EEO2bv2_Disability": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "visibleMinority": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EE_VisibleMinorityv2": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "aborginalPerson": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EE_Aboriginalv2": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "employer": {
+        "*": {
+          "@companyName": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:OtherEmployerName",
+          "@currentEmployer": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:CurrentEmployer",
+          "@jobTitle": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:OtherJobTitle",
+          "#Years_5fService": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:UDFs[8].ns1:UDF.-name",
+          "@yearsOfService": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:UDFs[8].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue",
+          "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:UDFs[8].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+          "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:UDFs[8].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+          "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:UDFs[8].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType"
+        }
+      },
+      "relevantYearsOfExperiance": {
+        "3-6 Years": {
+          "#Years_5fExperience": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.-name",
+          "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing",
+          "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType",
+          "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+          "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+          "$": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue"
+        },
+        "1-2 Years": {
+          "#Years_5fExperience": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.-name",
+          "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing",
+          "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType",
+          "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+          "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+          "$": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue"
+        },
+        "7+ Years": {
+          "#Years_5fExperience": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.-name",
+          "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing",
+          "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType",
+          "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+          "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+          "$": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue"
+        }
+      },
+      "intenaljsqAnswers": {
+        "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:InternalApplication",
+        "*": {
+          "@question": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.-name",
+          "@answer": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue",
+          "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing",
+          "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType",
+          "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+          "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale"
+        }
+      },
+      "psqAnswers": {
+        "*": {
+          "@type": {
+            "text": {
+              "@(2,question)": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchValue",
+              "@(2,answer)": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Explanation",
+              "#true": [
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-self-closing"
+              ],
+              "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchTarget",
+              "#search": [
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchType"
+              ]
+            },
+            "select": {
+              "@(2,explanation)": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Explanation",
+              "@(2,question)": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchValue",
+              "#true": [
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-self-closing",
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Answer.ns1:PossibleAnswer.ns1:Number.-self-closing"
+              ],
+              "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchTarget",
+              "#search": [
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchType",
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Answer.ns1:PossibleAnswer.ns1:Number.-searchType"
+              ],
+              "@(2,answer)": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Answer.ns1:PossibleAnswer.ns1:Number.-searchValue",
+              "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Answer.ns1:PossibleAnswer.ns1:Number.-searchTarget"
+            }
+          }
+        }
+      },
+      "formerEmployerId": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[0].ns1:UDF.%text%",
+        "#FormEMP_5fID": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[0].ns1:UDF.-name"
+      },
+      "identificationNumber": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[1].ns1:UDF.%text%",
+        "#Form_5fSSN": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[1].ns1:UDF.-name"
+      },
+      "referralEmployeeId": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[2].ns1:UDF.%text%",
+        "#RefEmp_5fID": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[2].ns1:UDF.-name"
+      },
+      "referralEmployeeName": {
+        "": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[3].ns1:UDF.%text%",
+        "#Name_5fLoc": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[3].ns1:UDF.-name"
+      },
+      "referralEmployeeLocation": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[7].ns1:UDF.%text%",
+        "#Ref_5fLoc": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[7].ns1:UDF.-name"
+      },
+      "formerEmployee": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue",
+        "#Former_5fEmp": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.-name",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+        "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType",
+        "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+        "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing"
+      },
+      "employeeReferral": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue",
+        "#Ref_5fEmp": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.-name",
+        "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+        "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+        "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType"
+      },
+      "subSource": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:TalentUser.ns1:TalentUser.ns1:Profile.ns1:ProfileInformation.ns1:RecruitmentSource.ns1:RecruitmentSource.ns1:Number.-searchValue",
+        "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:TalentUser.ns1:TalentUser.ns1:Profile.ns1:ProfileInformation.ns1:RecruitmentSource.ns1:RecruitmentSource.ns1:Number.-searchType",
+        "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:TalentUser.ns1:TalentUser.ns1:Profile.ns1:ProfileInformation.ns1:RecruitmentSource.ns1:RecruitmentSource.ns1:Number.-self-closing",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:create.ns1:Candidate.ns1:TalentUser.ns1:TalentUser.ns1:Profile.ns1:ProfileInformation.ns1:RecruitmentSource.ns1:RecruitmentSource.ns1:Number.-searchTarget"
+      }
+    }
+  }
+]
+
+2. Update Candidate:
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "#http://schemas.xmlsoap.org/soap/envelope/": "SOAP-ENV:Envelope.-xmlns:SOAP-ENV",
+      "#http://www.taleo.com/ws/tee800/2009/01/candidate": "SOAP-ENV:Envelope.-xmlns:ns1",
+      "username": {
+        "@(1,candidateEmailId)": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:EmailAddress.-searchValue",
+        "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:EmailAddress.-searchType",
+        "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:EmailAddress.-self-closing"
+      },
+      "firstName": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:FirstName",
+      "middleName": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:MiddleInitial",
+      "lastName": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:LastName",
+      "phoneNumber": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:HomePhone",
+      "city": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:City",
+      "state": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Statev1",
+      "jobId": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:Requisition.ns1:Requisition.ns1:ContestNumber.-searchValue",
+        "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:Requisition.ns1:Requisition.ns1:ContestNumber.-self-closing",
+        "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:Requisition.ns1:Requisition.ns1:ContestNumber.-searchType",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:Requisition.ns1:Requisition.ns1:ContestNumber.-searchTarget"
+      },
+      
+     
+      "ethnicity": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EEO2bv2_Ethnicity": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[0].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "race": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#EEO2bv2_Race": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType"
+        ],
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[1].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "gender": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EEO2bv2_Gender": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[2].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "veteran": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EEO2bv2_Veteran": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[3].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "disability": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EEO2bv2_Disability": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[4].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "visibleMinority": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EE_VisibleMinorityv2": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[5].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "aborginalPerson": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchValue",
+        "#search": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:Question.ns1:QCQuestion.ns1:Code.-searchType",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchType"
+        ],
+        "#EE_Aboriginalv2": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:Question.ns1:QCQuestion.ns1:Code.-searchValue",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-searchTarget",
+        "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:Question.ns1:QCQuestion.ns1:Code.-searchTarget",
+        "#true": [
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:Question.ns1:QCQuestion.ns1:Code.-self-closing",
+          "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:DiversityAnswers.ns1:DiversityAnswer[6].ns1:PossibleAnswer.ns1:DiversityPossibleAnswer.ns1:Number.-self-closing"
+        ]
+      },
+      "employer": {
+        "*": {
+          "@companyName": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:OtherEmployerName",
+          "@currentEmployer": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:CurrentEmployer",
+          "@jobTitle": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:OtherJobTitle",
+          "#Years_5fService": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:UDFs[8].ns1:UDF.-name",
+          "@yearsOfService": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:UDFs[8].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue",
+          "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:UDFs[8].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+          "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:UDFs[8].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+          "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[&1].ns1:UDFs[8].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType"
+        }
+      },
+      "relevantYearsOfExperiance": {
+        "3-6 Years": {
+          "#Years_5fExperience": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.-name",
+          "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing",
+          "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType",
+          "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+          "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+          "$": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue"
+        },
+        "1-2 Years": {
+          "#Years_5fExperience": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.-name",
+          "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing",
+          "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType",
+          "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+          "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+          "$": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue"
+        },
+        "7+ Years": {
+          "#Years_5fExperience": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.-name",
+          "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing",
+          "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType",
+          "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+          "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+          "$": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[6].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue"
+        }
+      },
+      "intenaljsqAnswers": {
+        "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:InternalApplication",
+        "*": {
+          "@question": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.-name",
+          "@answer": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue",
+          "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing",
+          "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType",
+          "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+          "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:UDFs[&1].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale"
+        }
+      },
+       "psqAnswers": {
+        "*": {
+          "@type": {
+            "text": {
+              "@(2,question)": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchValue",
+              "@(2,answer)": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Explanation",
+              "#true": [
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-self-closing"
+              ],
+              "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchTarget",
+              "#search": [
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchType"
+              ]
+            },
+            "select": {
+              "@(2,explanation)": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Explanation",
+              "@(2,question)": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchValue",
+              "#true": [
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-self-closing",
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Answer.ns1:PossibleAnswer.ns1:Number.-self-closing"
+              ],
+              "#..": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchTarget",
+              "#search": [
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Question.ns1:Question.ns1:Code.-searchType",
+                "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Answer.ns1:PossibleAnswer.ns1:Number.-searchType"
+              ],
+              "@(2,answer)": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Answer.ns1:PossibleAnswer.ns1:Number.-searchValue",
+              "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:QuestionAnswers.ns1:QuestionAnswer[&2].ns1:Answer.ns1:PossibleAnswer.ns1:Number.-searchTarget"
+            }
+          }
+        }
+      },
+      "formerEmployerId": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[0].ns1:UDF.%text%",
+        "#FormEMP_5fID": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[0].ns1:UDF.-name"
+      },
+      "identificationNumber": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[1].ns1:UDF.%text%",
+        "#Form_5fSSN": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[1].ns1:UDF.-name"
+      },
+      "referralEmployeeId": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[2].ns1:UDF.%text%",
+        "#RefEmp_5fID": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[2].ns1:UDF.-name"
+      },
+      "referralEmployeeName": {
+        "": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[3].ns1:UDF.%text%",
+        "#Name_5fLoc": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[3].ns1:UDF.-name"
+      },
+      "referralEmployeeLocation": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[7].ns1:UDF.%text%",
+        "#Ref_5fLoc": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[7].ns1:UDF.-name"
+      },
+      "formerEmployee": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue",
+        "#Former_5fEmp": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.-name",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+        "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType",
+        "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+        "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[4].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing"
+      },
+      "employeeReferral": {
+        "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchValue",
+        "#Ref_5fEmp": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.-name",
+        "#en": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-locale",
+        "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-self-closing",
+        "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchTarget",
+        "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:Applications.ns1:Application[0].ns1:ProfileInformation.ns1:ProfileInformation.ns1:Experiences.ns1:Experience[0].ns1:UDFs[5].ns1:UDF.ns1:UDSElement.ns1:Description.ns1:value.-searchType"
+      },
+      "subSource": {
+                "@": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:TalentUser.ns1:TalentUser.ns1:Profile.ns1:ProfileInformation.ns1:RecruitmentSource.ns1:RecruitmentSource.ns1:Number.-searchValue",
+                "#search": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:TalentUser.ns1:TalentUser.ns1:Profile.ns1:ProfileInformation.ns1:RecruitmentSource.ns1:RecruitmentSource.ns1:Number.-searchType",
+                "#true": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:TalentUser.ns1:TalentUser.ns1:Profile.ns1:ProfileInformation.ns1:RecruitmentSource.ns1:RecruitmentSource.ns1:Number.-self-closing",
+                "#.": "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:update.ns1:Candidate.ns1:TalentUser.ns1:TalentUser.ns1:Profile.ns1:ProfileInformation.ns1:RecruitmentSource.ns1:RecruitmentSource.ns1:Number.-searchTarget"
+                }
+    }
+  }
+]
+
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-restlet-starter</artifactId>
